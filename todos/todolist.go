@@ -42,8 +42,9 @@ func (tl *TodoList) Incomplete(index int) {
 }
 
 // Delete a todo
-func (tl *TodoList) Delete(index int) []Todo {
-	return append(tl.todos[:index], tl.todos[index+1])
+func (tl *TodoList) Delete(index int) {
+	tl.todos = append(tl.todos[:index], tl.todos[index+1:]...)
+	//return tl.todos
 }
 
 // Clear all todos
