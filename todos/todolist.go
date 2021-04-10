@@ -25,20 +25,17 @@ func (tl *TodoList) Add(text string) {
 
 // Updates a todos text by index
 func (tl *TodoList) UpdateText(index int, text string) {
-	var todo = tl.todos[index]
-	todo.UpdateText(text)
+	tl.todos[index].UpdateText(text)
 }
 
 // Set a todos status to complete by index
 func (tl *TodoList) Complete(index int) {
-	var todo = tl.todos[index]
-	todo.Complete()
+	tl.todos[index].Complete()
 }
 
 // Set a todos status to incomplete by index
 func (tl *TodoList) Incomplete(index int) {
-	var todo = tl.todos[index]
-	todo.Incomplete()
+	tl.todos[index].Incomplete()
 }
 
 // Delete a todo
