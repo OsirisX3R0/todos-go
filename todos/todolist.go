@@ -18,7 +18,7 @@ func (tl TodoList) Get(index int) Todo {
 }
 
 // Adds a new todo
-func (tl *TodoList) Add(text string) []Todo {
+func (tl *TodoList) Add(text string) Todos {
 	var todo = NewTodo(text)
 	return append(tl.todos, todo)
 }
@@ -48,5 +48,7 @@ func (tl *TodoList) Delete(index int) []Todo {
 
 // Clear all todos
 func (tl *TodoList) Clear() {
-	tl.todos = tl.todos.Clear()
+	tl.todos = NewTodos()
 }
+
+// Translates a todo list to strings

@@ -5,10 +5,6 @@ type Todos []Todo
 
 // Creates a new array of todos
 func NewTodos() Todos {
-	var todos Todos
+	todos := Todos{}
 	return todos
-}
-
-func (t *Todos) Clear() Todos {
-	return NewTodos()
 }
