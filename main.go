@@ -20,6 +20,7 @@ func main() {
 	todos.Complete(0)
 	todos.Complete(1)
 	todos.Incomplete(1)
+	todos.Complete(2)
 	todos.Delete(3)
 	todos.UpdateText(1, "Grill the burgers")
 
