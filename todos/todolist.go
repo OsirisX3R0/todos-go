@@ -18,9 +18,9 @@ func (tl TodoList) Get(index int) Todo {
 }
 
 // Adds a new todo
-func (tl *TodoList) Add(text string) Todos {
+func (tl *TodoList) Add(text string) {
 	var todo = NewTodo(text)
-	return append(tl.todos, todo)
+	tl.todos = append(tl.todos, todo)
 }
 
 // Updates a todos text by index
