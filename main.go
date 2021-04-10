@@ -15,7 +15,7 @@ func main() {
 
 	index := 1
 	fmt.Println("Initial Todos: ", todos)
-	fmt.Println("\n\nTodo at index ", index, ": ", todos.Get(1))
+	fmt.Println("\n\nTodo at index ", index, ": ", todos.Get(index))
 
 	todos.Complete(0)
 	todos.Complete(1)
@@ -23,9 +23,8 @@ func main() {
 	todos.Delete(3)
 	todos.UpdateText(1, "Grill the burgers")
 
-	var todo = todos.Get(0)
 	fmt.Println("\n\nUpdated Todos: ", todos)
-	fmt.Println("\n\nNew todo at index ", index, ": ", todo)
+	fmt.Println("\n\nNew todo at index ", index, ": ", todos.Get(index))
 
 	todos.Clear()
 	fmt.Println("\n\nCleared todos: ", todos)
