@@ -19,6 +19,11 @@ func (tl TodoList) Get(index int) Todo {
 	return tl.todos[index]
 }
 
+// Get the length of the todo list
+func (tl TodoList) Len() int {
+	return len(tl.todos)
+}
+
 // Adds a new todo
 func (tl *TodoList) Add(text string) {
 	todo := NewTodo(text)

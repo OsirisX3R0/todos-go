@@ -18,7 +18,7 @@ func NewTodo(text string) Todo {
 }
 
 // Displays the text of a todo
-func (t Todo) Text(text string) string {
+func (t Todo) Text() string {
 	return t.text
 }
 
