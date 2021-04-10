@@ -19,7 +19,7 @@ func (tl TodoList) Get(index int) Todo {
 
 // Adds a new todo
 func (tl *TodoList) Add(text string) {
-	var todo = NewTodo(text)
+	todo := NewTodo(text)
 	tl.todos = append(tl.todos, todo)
 }
 
@@ -50,3 +50,16 @@ func (tl *TodoList) Clear() {
 }
 
 // Translates a todo list to strings
+func (tl TodoList) String() string {
+	if len(tl.todos) == 0 {
+		return "No Todos"
+	}
+
+	todoStr := ""
+	for _, t := range tl.todos {
+		str := "\n" + t.String()
+		todoStr += str
+	}
+
+	return todoStr
+}
