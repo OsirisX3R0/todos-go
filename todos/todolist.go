@@ -1,46 +1,52 @@
 package todos
 
+// A list of todos
 type TodoList struct {
-	todos []Todo
+	todos Todos
 }
 
+// Creates a new list of todos
 func NewTodoList() TodoList {
-	var todos []Todo
-
 	return TodoList{
-		todos: todos,
+		todos: NewTodos(),
 	}
 }
 
+// Gets a todo by index
 func (tl TodoList) Get(index int) Todo {
 	return tl.todos[index]
 }
 
+// Adds a new todo
 func (tl *TodoList) Add(text string) []Todo {
 	var todo = NewTodo(text)
 	return append(tl.todos, todo)
 }
 
+// Updates a todos text by index
 func (tl *TodoList) UpdateText(index int, text string) {
 	var todo = tl.todos[index]
 	todo.UpdateText(text)
 }
 
+// Set a todos status to complete by index
 func (tl *TodoList) Complete(index int) {
 	var todo = tl.todos[index]
 	todo.Complete()
 }
 
+// Set a todos status to incomplete by index
 func (tl *TodoList) Incomplete(index int) {
 	var todo = tl.todos[index]
 	todo.Incomplete()
 }
 
+// Delete a todo
 func (tl *TodoList) Delete(index int) []Todo {
 	return append(tl.todos[:index], tl.todos[index+1])
 }
 
+// Clear all todos
 func (tl *TodoList) Clear() {
-	var todos []Todo
-	tl.todos = todos
+	tl.todos = tl.todos.Clear()
 }
