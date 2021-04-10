@@ -1,5 +1,7 @@
 package todos
 
+import "fmt"
+
 type Todo struct {
 	// The text of a todo
 	text string
@@ -46,5 +48,5 @@ func (t *Todo) Incomplete() {
 
 // Translates a todo to a string
 func (t Todo) String() string {
-	return "[" + t.completed.String() + "] " + t.text
+	return fmt.Sprintf("%v %v", t.completed, t.text)
 }

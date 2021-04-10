@@ -1,5 +1,7 @@
 package todos
 
+import "fmt"
+
 // A list of todos
 type TodoList struct {
 	todos Todos
@@ -57,7 +59,7 @@ func (tl TodoList) String() string {
 
 	todoStr := ""
 	for _, t := range tl.todos {
-		str := "\n" + t.String()
+		str := fmt.Sprintf("\n%v", t)
 		todoStr += str
 	}
 

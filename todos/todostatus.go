@@ -14,9 +14,9 @@ const (
 func (ts TodoStatus) String() string {
 	switch ts {
 	case Complete:
-		return "x"
+		return "[x]"
 	case Incomplete:
-		return " "
+		return "[ ]"
 	default:
 		return ""
 	}
