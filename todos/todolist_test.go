@@ -15,12 +15,14 @@ func TestNewTodoList(t *testing.T) {
 		equal = false
 	}
 
-	for i := range defaultList.todos {
-		if defaultList.todos[i] != newList.todos[i] {
-			equal = false
+	if equal {
+		for i := range defaultList.todos {
+			if defaultList.todos[i] != newList.todos[i] {
+				equal = false
+			}
 		}
-	}
 
+	}
 	if equal != true {
 		t.Errorf("Should be equal")
 	}

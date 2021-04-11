@@ -58,7 +58,7 @@ func (tl *TodoList) Clear() {
 
 // Translates a todo list to strings
 func (tl TodoList) String() string {
-	if len(tl.todos) == 0 {
+	if tl.Len() == 0 {
 		return "No Todos"
 	}
 
