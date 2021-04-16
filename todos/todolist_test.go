@@ -7,17 +7,15 @@ import (
 func TestNewTodoList(t *testing.T) {
 	equal := true
 	defaultList := NewTodoList()
-	newList := TodoList{
-		todos: NewTodos(),
-	}
+	newList := TodoList{}
 
-	if ((defaultList.todos == nil) != (newList.todos == nil)) || defaultList.Len() != newList.Len() {
+	if ((defaultList == nil) != (newList == nil)) || defaultList.Len() != newList.Len() {
 		equal = false
 	}
 
 	if equal {
-		for i := range defaultList.todos {
-			if defaultList.todos[i] != newList.todos[i] {
+		for i := range defaultList {
+			if defaultList[i] != newList[i] {
 				equal = false
 			}
 		}
